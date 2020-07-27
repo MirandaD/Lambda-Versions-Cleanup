@@ -9,11 +9,7 @@ describe('cleanup-module.js', ()=> {
   describe('listVersionsToBeCleanedByFunctionName()', ()=> {
     it('Should list lambda versions recursively', async ()=> {
       const AWS = require('aws-sdk')
-      const Lambda = new AWS.Lambda({
-        region: 'us-west-2',
-        accessKeyId: 'AKIAIZPC4C6EXOGNDFRQ',
-  secretAccessKey: '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'
-      })
+      const Lambda = new AWS.Lambda()
       const listVersionMock = sinon.stub().resolves({
         NextMarker: '',
         Versions:[
@@ -50,11 +46,7 @@ describe('cleanup-module.js', ()=> {
   describe('listVersionsToBeCleanedByFunctionName()', ()=> {
     it('Should list lambda versions recursively', async ()=> {
       const AWS = require('aws-sdk')
-      const Lambda = new AWS.Lambda({
-        region: 'us-west-2',
-        accessKeyId: 'AKIAIZPC4C6EXOGNDFRQ',
-  secretAccessKey: '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'
-      })
+      const Lambda = new AWS.Lambda()
       const deleteFunctionMock = sinon.stub().resolves({})
       const LambdaMock = {deleteFunction: () => {return {promise: deleteFunctionMock}}}
       const cleanupModule = new CleanupModule(Lambda)
