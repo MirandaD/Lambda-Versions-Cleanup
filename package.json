@@ -1,0 +1,18 @@
+{
+    "name": "replaced-by-user-input",
+    "description": "replaced-by-user-input",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^8.0.1",
+        "sinon": "^9.0.2",
+        "standard": "^14.3.4"
+    },
+    "scripts": {
+        "test": "find src -name '*.test.js' |  NODE_ENV=test xargs mocha --exit -R spec",
+        "lint": "find ./src -name '*.js' |  xargs standard",
+        "fix-lint": "standard --fix"
+    }
+}
