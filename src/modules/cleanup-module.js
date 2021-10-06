@@ -22,7 +22,7 @@ class CleanupModule {
     }
     // exclude $LATEST and the lastN
     const orderedList = _.orderBy(versionList, ['LastModified'], ['desc'])
-    console.log(orderedList)
+    // console.log(orderedList)
     _.forEach(orderedList, (singleVersion, index) => {
       if (singleVersion.Version != '$LATEST' && index + 1 > latestNVersionsToKeep) {
         versionsToDel.push(singleVersion)
